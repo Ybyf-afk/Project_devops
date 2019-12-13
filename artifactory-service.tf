@@ -32,11 +32,3 @@ resource "aws_ecs_service" "artifactory_service" {
   task_definition = aws_ecs_task_definition.artifactory_definition.id
   desired_count = 1
 
-  load_balancer {
-    target_group_arn = aws_alb_target_group.artifactory.arn
-    container_name = "artifactory"
-    container_port = 8081
-  }
-
-  depends_on = [ aws_alb.devops-alb ]
-}
