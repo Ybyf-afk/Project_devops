@@ -29,11 +29,4 @@ resource "aws_ecs_service" "webapp_service" {
   //  lifecycle {
   //    ignore_changes = ["task_definition"]
   //  }
-  load_balancer {
-    target_group_arn = aws_alb_target_group.webapp.arn
-    container_name = "webapp"
-    container_port = 5050
-  }
 
-  depends_on = [ aws_alb.devops-alb ]
-}
