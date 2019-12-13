@@ -7,7 +7,7 @@ resource "aws_ecs_task_definition" "artifactory_definition" {
       "memory": 2048,
       "name": "artifactory",
       "cpu": 1024,
-      "image": "950156722127.dkr.ecr.eu-west-2.amazonaws.com/test:artifactory-1.0",
+      "image": "",
       "portMappings": [
       {
         "containerPort": 8081,
